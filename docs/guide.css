@@ -1,0 +1,36 @@
+/* Guide pages (huong-dan/...): an article column on top of site.css. */
+
+.guide { padding: 40px 0 64px; margin-inline: auto; }
+.crumbs { margin: 0 0 14px; font-size: 14px; color: var(--muted); }
+.crumbs a { color: var(--muted); }
+.guide h1 { margin: 0; color: var(--heading); font-size: clamp(32px, 4.6vw, 46px); line-height: 1.12; letter-spacing: -0.02em; }
+.guide .lead { margin: 18px 0 26px; font-size: 19px; color: var(--muted); }
+.guide h2 { margin: 48px 0 12px; font-size: 26px; scroll-margin-top: 80px; }
+.guide p, .guide li { line-height: 1.7; }
+.guide ol, .guide ul { padding-left: 22px; }
+.guide li { margin-bottom: 6px; }
+
+.box { background: var(--raised); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 12px; padding: 14px 18px; margin: 0 0 22px; }
+.box ul { margin: 6px 0 0; }
+.box p { margin: 6px 0 0; }
+.box.next { margin-top: 48px; }
+
+.toc { background: var(--alt); border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; }
+.toc ol { margin: 0; }
+.toc a { color: var(--ink); }
+
+.guide pre { position: relative; padding-right: 92px; line-height: 1.6; }
+.copy {
+  position: absolute; top: 8px; right: 8px; font: 600 12px var(--dk-fontFamily-brand);
+  color: var(--dk-color-ink-50); background: var(--dk-color-ink-600); border: 1px solid rgb(255 255 255 / 0.18); /* solid: long commands scroll underneath */
+  border-radius: 7px; padding: 5px 10px; cursor: pointer;
+}
+.copy:hover { background: var(--dk-color-ink-500); }
+.tab-label { margin: 16px 0 6px; font-weight: 600; font-size: 15px; color: var(--heading); }
+
+.examples { width: 100%; border-collapse: collapse; margin: 14px 0; background: var(--raised); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.examples th, .examples td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+.examples th { font-size: 14px; color: var(--muted); font-weight: 600; background: var(--alt); }
+.examples tr:last-child td { border-bottom: 0; }
+
+.guide details summary span { flex: 1; }

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cách gõ tiếng Việt trên Ubuntu 24.04 (Telex, VNI) – DauKey</title>
+<meta name="description" content="Hướng dẫn cài bộ gõ tiếng Việt DauKey trên Ubuntu 24.04 và mới hơn: tải, cài, thêm vào Input Sources, chuyển Việt/Anh bằng Ctrl+Shift. Chạy trên Wayland và X11, máy x64 và ARM64.">
+<link rel="canonical" href="https://daukey.keellabs.dev/huong-dan/go-tieng-viet-ubuntu/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DauKey">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:url" content="https://daukey.keellabs.dev/huong-dan/go-tieng-viet-ubuntu/">
+<meta property="og:title" content="Cách gõ tiếng Việt trên Ubuntu 24.04">
+<meta property="og:description" content="Cài DauKey, thêm vào Input Sources và gõ Telex, VNI trên Ubuntu, Wayland lẫn X11. Năm phút là xong.">
+<meta property="og:image" content="https://daukey.keellabs.dev/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f6f5f1">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Cách gõ tiếng Việt trên Ubuntu 24.04","inLanguage":"vi","datePublished":"2026-10-25","dateModified":"2026-10-25","url":"https://daukey.keellabs.dev/huong-dan/go-tieng-viet-ubuntu/","image":"https://daukey.keellabs.dev/img/og.png","author":{"@type":"Organization","name":"Keel Labs","url":"https://keellabs.dev/"},"publisher":{"@type":"Organization","name":"Keel Labs","url":"https://keellabs.dev/"},"about":{"@type":"SoftwareApplication","name":"DauKey","applicationCategory":"UtilitiesApplication","operatingSystem":"Linux"}}</script>
+<link rel="icon" href="/img/daukey.svg" type="image/svg+xml">
+<link rel="icon" href="/img/favicon-64.png" type="image/png" sizes="64x64">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/design-tokens.css">
+<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/guide.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-row">
+    <a class="brand" href="/"><img src="/img/daukey.svg" alt="" width="32" height="32"><span>DauKey</span></a>
+    <nav aria-label="Mục lục">
+      <a href="/#tai-ve">Tải về</a>
+      <a href="/#khac-biet">Khác biệt</a>
+      <a href="/#hoi-dap">Hỏi đáp</a>
+    </nav>
+  </div>
+</header>
+
+<main class="guide narrow">
+  <p class="crumbs"><a href="/">DauKey</a> › Hướng dẫn</p>
+  <h1>Cách gõ tiếng Việt trên Ubuntu 24.04</h1>
+  <p class="lead">Ubuntu chưa có sẵn bộ gõ tiếng Việt. Bài này cài <strong>DauKey</strong>, một bộ gõ miễn phí cho IBus,
+    rồi thêm vào Input Sources để gõ Telex, VNI hay VIQR. Chạy trên cả Wayland lẫn X11, máy x64 lẫn ARM64.
+    Mất khoảng năm phút.</p>
+
+  <aside class="box">
+    <strong>Cần có</strong>
+    <ul>
+      <li>Ubuntu 24.04 trở lên (hoặc Fedora 40 trở lên), giao diện GNOME mặc định.</li>
+      <li>Quyền <code>sudo</code> để cài.</li>
+    </ul>
+  </aside>
+
+  <nav class="toc" aria-label="Các bước">
+    <ol>
+      <li><a href="#tai">Tải DauKey</a></li>
+      <li><a href="#cai">Cài đặt</a></li>
+      <li><a href="#them">Thêm DauKey vào Input Sources</a></li>
+      <li><a href="#go">Gõ thử và chuyển Việt/Anh</a></li>
+      <li><a href="#cai-dat">Chọn kiểu gõ, gõ tắt</a></li>
+      <li><a href="#loi">Khi không gõ được</a></li>
+      <li><a href="#go-cai">Gỡ cài đặt</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="tai">1. Tải DauKey</h2>
+  <p>Mở <strong>Terminal</strong> (<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd>). Xem máy của bạn là x64 hay ARM64:</p>
+  <pre><code>uname -m</code></pre>
+  <p><code>x86_64</code> là máy x64 (đa số máy tính), <code>aarch64</code> là ARM64. Rồi tải đúng bản:</p>
+  <div class="tabs">
+    <p class="tab-label">Máy x64</p>
+    <pre><code>cd ~/Downloads
+wget https://github.com/keel-app/daukey/releases/download/v<span data-v>1.0.0</span>/DauKey-<span data-v>1.0.0</span>-Linux-IBus.tar.gz
+tar -xzf DauKey-<span data-v>1.0.0</span>-Linux-IBus.tar.gz</code></pre>
+    <p class="tab-label">Máy ARM64</p>
+    <pre><code>cd ~/Downloads
+wget https://github.com/keel-app/daukey/releases/download/v<span data-v>1.0.0</span>/DauKey-<span data-v>1.0.0</span>-Linux-IBus-arm64.tar.gz
+tar -xzf DauKey-<span data-v>1.0.0</span>-Linux-IBus-arm64.tar.gz</code></pre>
+  </div>
+  <p class="hint">Hoặc tải bằng trình duyệt ở <a href="/#tai-ve">trang tải về</a> rồi giải nén.</p>
+
+  <h2 id="cai">2. Cài đặt</h2>
+  <pre><code>cd daukey
+sudo ./install.sh
+ibus restart</code></pre>
+  <p>Lệnh cài chép DauKey vào hệ thống. <code>ibus restart</code> (không cần <code>sudo</code>) để IBus thấy bộ gõ mới.</p>
+
+  <h2 id="them">3. Thêm DauKey vào Input Sources</h2>
+  <ol>
+    <li>Mở <strong>Settings</strong> → <strong>Keyboard</strong>.</li>
+    <li>Ở mục <strong>Input Sources</strong>, bấm <strong>+ Add Input Source</strong>.</li>
+    <li>Chọn <strong>Vietnamese</strong> → <strong>Vietnamese (DauKey)</strong> → <strong>Add</strong>.</li>
+  </ol>
+  <p>Hoặc làm bằng một lệnh, giữ bàn phím tiếng Anh và thêm DauKey:</p>
+  <pre><code>gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('ibus', 'daukey')]"</code></pre>
+  <p class="hint">Nếu bàn phím của bạn không phải <code>us</code>, dùng cách qua Settings để giữ nguyên bàn phím hiện có.</p>
+
+  <h2 id="go">4. Gõ thử và chuyển Việt/Anh</h2>
+  <p>Bấm vào ô chữ trên thanh trên cùng (cạnh đồng hồ) và chọn <strong>Vietnamese (DauKey)</strong>, hoặc bấm
+    <kbd>Super</kbd>+<kbd>Space</kbd>. Ô đó hiện <strong>â</strong> khi đang gõ tiếng Việt.</p>
+  <table class="examples">
+    <thead><tr><th>Gõ (Telex)</th><th>Ra</th></tr></thead>
+    <tbody>
+      <tr><td><code>Vieetj Nam</code></td><td>Việt Nam</td></tr>
+      <tr><td><code>tieengs Vieetj</code></td><td>tiếng Việt</td></tr>
+      <tr><td><code>dduowngf phoos</code></td><td>đường phố</td></tr>
+      <tr><td><code>github</code></td><td>github (từ tiếng Anh giữ nguyên)</td></tr>
+    </tbody>
+  </table>
+  <p>Bấm <kbd>Ctrl</kbd>+<kbd>Shift</kbd> rồi nhả để chuyển qua lại tiếng Việt và tiếng Anh. Ô trên thanh trên cùng đổi
+    giữa <strong>â</strong> và <strong>a</strong>, kèm một tiếng báo nhỏ. Các phím của ứng dụng như
+    <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> vẫn chạy như thường.</p>
+
+  <h2 id="cai-dat">5. Chọn kiểu gõ, gõ tắt</h2>
+  <p>Bấm vào chữ <strong>â</strong> trên thanh trên cùng: menu có <strong>Kiểu gõ</strong> (Telex, Telex đơn giản, VNI, VIQR),
+    <strong>Bảng mã</strong>, bật/tắt <strong>Gõ tắt</strong> và <strong>Kiểm tra chính tả</strong>, và <strong>Cài đặt…</strong>.</p>
+  <p>Trong cửa sổ Cài đặt (cũng mở được từ danh sách ứng dụng, tên <strong>DauKey</strong>):</p>
+  <ul>
+    <li><strong>Phím tắt</strong>: đổi phím chuyển Việt/Anh, đặt phím đổi kiểu gõ.</li>
+    <li><strong>Gõ tắt</strong>: thêm <code>vn</code> → Việt Nam. Gõ <code>Vn</code> ra Việt Nam, <code>VN</code> ra VIỆT NAM.</li>
+    <li><strong>Tùy chọn</strong>: bỏ dấu kiểu mới (hoà, khoẻ), viết hoa đầu câu, tạm gõ tiếng Anh khi bật Caps Lock.</li>
+  </ul>
+
+  <h2 id="loi">6. Khi không gõ được</h2>
+  <details>
+    <summary><span>Không thấy Vietnamese (DauKey) trong danh sách</span></summary>
+    <p>Chạy lại <code>ibus restart</code>. Vẫn không thấy thì đăng xuất rồi đăng nhập lại. Kiểm tra IBus đã nhận DauKey chưa:</p>
+    <pre><code>ibus list-engine | grep -i daukey</code></pre>
+  </details>
+  <details>
+    <summary><span>Gõ được ở app khác nhưng không gõ được trong Chrome hay VS Code</span></summary>
+    <p>Chrome, VS Code và các app Electron chạy bằng Wayland gốc có thể cần bật bộ gõ cho Wayland. Mở app với cờ
+      <code>--enable-wayland-ime</code>, ví dụ <code>google-chrome --enable-wayland-ime</code>. Chạy ở chế độ mặc định
+      (XWayland) thì thường không cần.</p>
+  </details>
+  <details>
+    <summary><span>Gõ ra chữ có gạch chân rồi mới thành chữ thật</span></summary>
+    <p>Đó là chữ đang gõ dở: DauKey hiện từ đang gõ có gạch chân và đưa vào ứng dụng khi bạn bấm dấu cách hoặc dấu câu.
+      Cách này chạy được trên mọi ứng dụng, cả Wayland lẫn X11.</p>
+  </details>
+  <details>
+    <summary><span>Đang dùng một bộ gõ IBus khác</span></summary>
+    <p>Có thể giữ cả hai, nhưng chỉ chọn một bộ gõ tiếng Việt trên thanh trên cùng để tránh gõ dấu hai lần.
+      Bỏ bộ gõ cũ trong Settings → Keyboard → Input Sources nếu không dùng nữa.</p>
+  </details>
+
+  <h2 id="go-cai">7. Gỡ cài đặt</h2>
+  <p>Bỏ DauKey khỏi Input Sources trong Settings, rồi trong thư mục đã giải nén:</p>
+  <pre><code>sudo ./install.sh --uninstall
+ibus restart</code></pre>
+
+  <aside class="box next">
+    <strong>Dùng cả Windows?</strong>
+    <p>DauKey có bản Windows với cùng cách gõ, cùng phím tắt, cùng file gõ tắt. <a href="/#tai-ve">Tải ở trang chủ</a>.</p>
+  </aside>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-row">
+    <span>© 2026 <a href="https://keellabs.dev">Keel Labs</a></span>
+    <span><a href="/">DauKey</a> · <a href="https://github.com/keel-app/daukey/releases">Các bản phát hành</a></span>
+  </div>
+</footer>
+
+<script>
+  // Commands always name the current release (version.json is updated by the release job).
+  fetch("/version.json").then((r) => r.ok && r.json()).then((v) => {
+    if (v && v.version) document.querySelectorAll("[data-v]").forEach((el) => { el.textContent = v.version; });
+  }).catch(() => {});
+  // A copy button on every command block.
+  document.querySelectorAll("pre").forEach((pre) => {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "copy"; b.textContent = "Sao chép";
+    b.addEventListener("click", () => {
+      navigator.clipboard.writeText(pre.querySelector("code").innerText.trim()).then(() => {
+        b.textContent = "Đã chép"; setTimeout(() => { b.textContent = "Sao chép"; }, 1500);
+      });
+    });
+    pre.appendChild(b);
+  });
+</script>
+</body>
+</html>
