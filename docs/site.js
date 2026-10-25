@@ -19,7 +19,12 @@
       ? `Phiên bản ${info.version}. Miễn phí, không quảng cáo.`
       : `Phiên bản ${info.version} sắp phát hành. Theo dõi trang phát hành để tải khi có.`;
 
-    document.querySelectorAll("[data-download]").forEach((a) => {
+    // Secondary links (portable .zip, ARM64) only show when the release has that file.
+    document.querySelectorAll(".alt-download").forEach((a) => {
+      const url = released && info.downloads && info.downloads[a.dataset.download];
+      if (url) a.href = url; else a.hidden = true;
+    });
+    document.querySelectorAll(".button[data-download]").forEach((a) => {
       const os = a.dataset.download;
       if (released && info.downloads && info.downloads[os]) {
         a.href = info.downloads[os];

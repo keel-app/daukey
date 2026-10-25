@@ -150,14 +150,16 @@
         <article class="card" data-os="windows">
           <h3>Windows</h3>
           <p class="meta">Windows 10 và 11 · x64 (chạy được trên máy ARM)</p>
-          <a class="button primary" data-download="windows" href="https://github.com/keel-app/daukey/releases">Tải cho Windows</a>
-          <p class="hint">File <code>.zip</code>. Giải nén, chạy <strong>DauKey.exe</strong>.</p>
+          <a class="button primary" data-download="windows" href="https://github.com/keel-app/daukey/releases">Tải bộ cài Windows</a>
+          <p class="hint">Chạy file <code>Setup.exe</code>, không cần quyền quản trị.
+            <a class="alt-download" data-download="windows-zip" href="https://github.com/keel-app/daukey/releases">Bản không cần cài (.zip)</a></p>
         </article>
         <article class="card" data-os="linux">
           <h3>Linux</h3>
-          <p class="meta">x64 · Ubuntu 24.04, Fedora 40 trở lên · IBus</p>
-          <a class="button primary" data-download="linux" href="https://github.com/keel-app/daukey/releases">Tải cho Linux</a>
-          <p class="hint">File <code>.tar.gz</code> cho IBus. Xem hướng dẫn cài bên dưới.</p>
+          <p class="meta">x64 và ARM64 · Ubuntu 24.04, Fedora 40 trở lên · IBus</p>
+          <a class="button primary" data-download="linux" href="https://github.com/keel-app/daukey/releases">Tải cho Linux (x64)</a>
+          <p class="hint">File <code>.tar.gz</code> cho IBus, xem hướng dẫn cài bên dưới.
+            <a class="alt-download" data-download="linux-arm64" href="https://github.com/keel-app/daukey/releases">Bản ARM64</a></p>
         </article>
       </div>
     </div>
@@ -179,10 +181,10 @@
         <details data-os="windows">
           <summary>Windows</summary>
           <ol>
-            <li>Giải nén file <code>.zip</code> vào một thư mục cố định, ví dụ <code>C:\Program Files\DauKey</code>.</li>
-            <li>Chạy <strong>DauKey.exe</strong>. Nếu Windows SmartScreen hỏi: <strong>More info</strong> → <strong>Run anyway</strong>.</li>
+            <li>Chạy file <strong>DauKey-…-Windows-Setup.exe</strong>. Nếu Windows SmartScreen hỏi: <strong>More info</strong> → <strong>Run anyway</strong>.</li>
+            <li>Chọn có chạy DauKey khi đăng nhập không, bấm <strong>Cài đặt</strong>. DauKey được cài cho riêng tài khoản của bạn, không cần quyền quản trị.</li>
             <li>Biểu tượng <strong>â</strong> ở khay hệ thống (bấm mũi tên ^ nếu không thấy). Nhấp đúp để mở Cài đặt.</li>
-            <li>Muốn DauKey chạy cùng Windows: Cài đặt → Chung → <strong>Tự động chạy khi đăng nhập</strong>.</li>
+            <li>Gỡ cài đặt: Settings → Apps → Installed apps → <strong>DauKey</strong> → Uninstall.</li>
           </ol>
         </details>
         <details data-os="linux">
