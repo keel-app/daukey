@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://daukey.keellabs.dev/sitemap.xml
