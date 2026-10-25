@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cách dùng gõ tắt khi gõ tiếng Việt (vn → Việt Nam) – DauKey</title>
+<meta name="description" content="Đặt gõ tắt trong DauKey: gõ vn ra Việt Nam, Vn ra Việt Nam, VN ra VIỆT NAM. Cách thêm, sửa, chép danh sách gõ tắt giữa Windows và Linux, và những từ tắt nên tránh.">
+<link rel="canonical" href="https://daukey.keellabs.dev/huong-dan/go-tat/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DauKey">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:url" content="https://daukey.keellabs.dev/huong-dan/go-tat/">
+<meta property="og:title" content="Cách dùng gõ tắt khi gõ tiếng Việt">
+<meta property="og:description" content="vn → Việt Nam, ko → không, dc → được. Đặt một lần, dùng trên mọi máy.">
+<meta property="og:image" content="https://daukey.keellabs.dev/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f6f5f1">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Cách dùng gõ tắt khi gõ tiếng Việt","inLanguage":"vi","datePublished":"2026-10-25","dateModified":"2026-10-25","url":"https://daukey.keellabs.dev/huong-dan/go-tat/","image":"https://daukey.keellabs.dev/img/og.png","author":{"@type":"Organization","name":"Keel Labs","url":"https://keellabs.dev/"},"publisher":{"@type":"Organization","name":"Keel Labs","url":"https://keellabs.dev/"},"about":{"@type":"SoftwareApplication","name":"DauKey","applicationCategory":"UtilitiesApplication"}}</script>
+<link rel="icon" href="/img/daukey.svg" type="image/svg+xml">
+<link rel="icon" href="/img/favicon-64.png" type="image/png" sizes="64x64">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/design-tokens.css">
+<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/guide.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-row">
+    <a class="brand" href="/"><img src="/img/daukey.svg" alt="" width="32" height="32"><span>DauKey</span></a>
+    <nav aria-label="Mục lục">
+      <a href="/#tai-ve">Tải về</a>
+      <a href="/huong-dan/">Hướng dẫn</a>
+      <a href="/#hoi-dap">Hỏi đáp</a>
+    </nav>
+  </div>
+</header>
+
+<main class="guide narrow">
+  <p class="crumbs"><a href="/">DauKey</a> › <a href="/huong-dan/">Hướng dẫn</a></p>
+  <h1>Cách dùng gõ tắt</h1>
+  <p class="lead">Gõ tắt thay một từ ngắn bằng cả cụm: gõ <code>vn</code> rồi dấu cách là ra <strong>Việt Nam</strong>.
+    Đặt một lần, dùng được ở mọi ứng dụng, và chép sang máy khác chỉ bằng một file.</p>
+
+  <nav class="toc" aria-label="Nội dung">
+    <ol>
+      <li><a href="#cach-hoat-dong">Gõ tắt hoạt động thế nào</a></li>
+      <li><a href="#them">Thêm, sửa, xoá gõ tắt</a></li>
+      <li><a href="#chu-hoa">Chữ hoa tự đúng</a></li>
+      <li><a href="#goi-y">Gợi ý danh sách và từ nên tránh</a></li>
+      <li><a href="#file">Chép danh sách sang máy khác</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="cach-hoat-dong">1. Gõ tắt hoạt động thế nào</h2>
+  <p>Gõ từ tắt rồi bấm <strong>dấu cách</strong> hoặc một <strong>dấu câu</strong> (<code>.</code> <code>,</code>
+    <code>!</code> <code>?</code>…): DauKey thay từ tắt bằng nội dung đã đặt, và giữ dấu cách hay dấu câu bạn vừa gõ.</p>
+  <table class="examples">
+    <thead><tr><th>Bạn gõ</th><th>Ra</th></tr></thead>
+    <tbody>
+      <tr><td><code>Tooi owr vn␣</code></td><td>Tôi ở Việt Nam␣</td></tr>
+      <tr><td><code>hn,</code></td><td>Hà Nội,</td></tr>
+      <tr><td><code>vnx␣</code></td><td>vnx␣ (không phải từ tắt nào, giữ nguyên)</td></tr>
+    </tbody>
+  </table>
+  <p class="hint">Bấm <kbd>Enter</kbd> hay <kbd>Tab</kbd> ngay sau từ tắt thì không thay, để bạn vẫn gõ được chính từ đó khi cần.
+    Tắt gõ tắt tạm thời: chuột phải vào biểu tượng DauKey (Windows) hoặc bấm chữ â trên thanh trên cùng (Linux) → bỏ chọn <strong>Gõ tắt</strong>.</p>
+
+  <h2 id="them">2. Thêm, sửa, xoá gõ tắt</h2>
+  <ol>
+    <li>Mở cửa sổ Cài đặt của DauKey: nhấp đúp biểu tượng ở khay hệ thống trên Windows; trên Linux bấm chữ â → <strong>Cài đặt…</strong>.</li>
+    <li>Chọn tab <strong>Gõ tắt</strong>.</li>
+    <li>Nhập <strong>Gõ tắt</strong> (ví dụ <code>vn</code>) và <strong>Thay bằng</strong> (ví dụ <code>Việt Nam</code>), bấm <strong>Thêm</strong> hoặc <kbd>Enter</kbd>.</li>
+  </ol>
+  <p>Bấm vào một dòng trong danh sách để sửa, bấm <strong>Lưu</strong> khi xong. Để xoá: trên Windows chọn dòng rồi bấm
+    <strong>Xoá…</strong> hoặc phím <kbd>Delete</kbd>; trên Linux bấm biểu tượng thùng rác cuối dòng. DauKey hỏi lại trước khi xoá.
+    Thay đổi có hiệu lực ngay, không cần khởi động lại.</p>
+  <p class="hint">Từ tắt không được chứa dấu cách hay dấu câu, vì đó chính là phím kích hoạt. Nội dung thay thế thì viết gì
+    cũng được, kể cả có dấu câu, nhưng chỉ trên một dòng.</p>
+
+  <h2 id="chu-hoa">3. Chữ hoa tự đúng</h2>
+  <p>Đặt từ tắt bằng <strong>chữ thường</strong>, DauKey tự viết hoa theo cách bạn gõ:</p>
+  <table class="examples">
+    <thead><tr><th>Bạn gõ</th><th>Ra</th></tr></thead>
+    <tbody>
+      <tr><td><code>vn</code></td><td>Việt Nam</td></tr>
+      <tr><td><code>Vn</code></td><td>Việt Nam (đầu câu)</td></tr>
+      <tr><td><code>VN</code></td><td>VIỆT NAM</td></tr>
+      <tr><td><code>ko</code></td><td>không</td></tr>
+      <tr><td><code>Ko</code></td><td>Không</td></tr>
+    </tbody>
+  </table>
+  <p class="hint">Muốn một từ tắt chỉ chạy đúng một kiểu chữ, đặt nó có chữ hoa: từ tắt <code>VN</code> chỉ chạy khi gõ <code>VN</code>.</p>
+
+  <h2 id="goi-y">4. Gợi ý danh sách và từ nên tránh</h2>
+  <p>Một danh sách hay dùng để bắt đầu:</p>
+  <pre><code>vn:Việt Nam
+hn:Hà Nội
+hcm:TP. Hồ Chí Minh
+ko:không
+dc:được
+ntn:như thế nào
+vs:với
+cty:công ty
+kh:khách hàng
+tks:Cảm ơn bạn nhiều!</code></pre>
+  <p><strong>Tránh</strong> đặt từ tắt trùng với một từ có thật, cả tiếng Việt lẫn tiếng Anh, như <code>an</code>, <code>to</code>,
+    <code>me</code>, <code>is</code>: bạn sẽ không gõ được chính từ đó nữa (trừ khi bấm <kbd>Enter</kbd> ngay sau).
+    Từ tắt tốt là chuỗi phụ âm hoặc viết tắt quen thuộc: <code>ko</code>, <code>dc</code>, <code>ntn</code>.</p>
+
+  <h2 id="file">5. Chép danh sách sang máy khác</h2>
+  <p>Danh sách gõ tắt là một file văn bản, mỗi dòng một cặp <code>từ tắt:nội dung</code>, dùng chung cho mọi hệ điều hành:</p>
+  <table class="examples">
+    <thead><tr><th>Hệ điều hành</th><th>Vị trí file</th></tr></thead>
+    <tbody>
+      <tr><td>Windows</td><td><code>%APPDATA%\DauKey\macros.txt</code></td></tr>
+      <tr><td>Linux</td><td><code>~/.config/daukey/macros.txt</code></td></tr>
+      <tr><td>macOS</td><td><code>~/Library/Application Support/DauKey/macros.txt</code></td></tr>
+    </tbody>
+  </table>
+  <p>Cách dễ nhất: ở máy cũ vào tab <strong>Gõ tắt</strong> → <strong>Xuất ra file…</strong> (trên Linux: <strong>Xuất…</strong>);
+    ở máy mới → <strong>Nhập từ file…</strong> (<strong>Nhập…</strong>). Nút <strong>Mở thư mục</strong> mở thẳng nơi chứa file.
+    Nhập sẽ <strong>gộp</strong> vào danh sách đang có; từ tắt trùng tên lấy nội dung trong file mới.</p>
+  <p class="hint">Sửa file bằng tay cũng được: DauKey tự nạp lại khi file được lưu. Dòng bắt đầu bằng <code>#</code> là ghi chú.</p>
+
+  <aside class="box next">
+    <strong>Chưa cài DauKey?</strong>
+    <p>Xem cách cài trên <a href="/huong-dan/go-tieng-viet-windows/">Windows</a> hoặc
+      <a href="/huong-dan/go-tieng-viet-ubuntu/">Ubuntu</a>.</p>
+  </aside>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-row">
+    <span>© 2026 <a href="https://keellabs.dev">Keel Labs</a></span>
+    <span><a href="/">DauKey</a> · <a href="/huong-dan/">Hướng dẫn</a> · <a href="https://github.com/keel-app/daukey/releases">Các bản phát hành</a></span>
+  </div>
+</footer>
+
+<script src="/guide.js"></script>
+</body>
+</html>

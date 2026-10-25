@@ -34,14 +34,14 @@
     <a class="brand" href="/"><img src="/img/daukey.svg" alt="" width="32" height="32"><span>DauKey</span></a>
     <nav aria-label="Mục lục">
       <a href="/#tai-ve">Tải về</a>
-      <a href="/#khac-biet">Khác biệt</a>
+      <a href="/huong-dan/">Hướng dẫn</a>
       <a href="/#hoi-dap">Hỏi đáp</a>
     </nav>
   </div>
 </header>
 
 <main class="guide narrow">
-  <p class="crumbs"><a href="/">DauKey</a> › Hướng dẫn</p>
+  <p class="crumbs"><a href="/">DauKey</a> › <a href="/huong-dan/">Hướng dẫn</a></p>
   <h1>Cách gõ tiếng Việt trên Ubuntu 24.04</h1>
   <p class="lead">Ubuntu chưa có sẵn bộ gõ tiếng Việt. Bài này cài <strong>DauKey</strong>, một bộ gõ miễn phí cho IBus,
     rồi thêm vào Input Sources để gõ Telex, VNI hay VIQR. Chạy trên cả Wayland lẫn X11, máy x64 lẫn ARM64.
@@ -121,7 +121,7 @@ ibus restart</code></pre>
   <p>Trong cửa sổ Cài đặt (cũng mở được từ danh sách ứng dụng, tên <strong>DauKey</strong>):</p>
   <ul>
     <li><strong>Phím tắt</strong>: đổi phím chuyển Việt/Anh, đặt phím đổi kiểu gõ.</li>
-    <li><strong>Gõ tắt</strong>: thêm <code>vn</code> → Việt Nam. Gõ <code>Vn</code> ra Việt Nam, <code>VN</code> ra VIỆT NAM.</li>
+    <li><strong>Gõ tắt</strong>: thêm <code>vn</code> → Việt Nam. Xem <a href="/huong-dan/go-tat/">cách dùng gõ tắt</a>.</li>
     <li><strong>Tùy chọn</strong>: bỏ dấu kiểu mới (hoà, khoẻ), viết hoa đầu câu, tạm gõ tiếng Anh khi bật Caps Lock.</li>
   </ul>
 
@@ -155,33 +155,18 @@ ibus restart</code></pre>
 
   <aside class="box next">
     <strong>Dùng cả Windows?</strong>
-    <p>DauKey có bản Windows với cùng cách gõ, cùng phím tắt, cùng file gõ tắt. <a href="/#tai-ve">Tải ở trang chủ</a>.</p>
+    <p>DauKey có bản Windows với cùng cách gõ, cùng phím tắt, cùng file gõ tắt.
+      Xem <a href="/huong-dan/go-tieng-viet-windows/">cách gõ tiếng Việt trên Windows</a>.</p>
   </aside>
 </main>
 
 <footer class="foot">
   <div class="wrap foot-row">
     <span>© 2026 <a href="https://keellabs.dev">Keel Labs</a></span>
-    <span><a href="/">DauKey</a> · <a href="https://github.com/keel-app/daukey/releases">Các bản phát hành</a></span>
+    <span><a href="/">DauKey</a> · <a href="/huong-dan/">Hướng dẫn</a> · <a href="https://github.com/keel-app/daukey/releases">Các bản phát hành</a></span>
   </div>
 </footer>
 
-<script>
-  // Commands always name the current release (version.json is updated by the release job).
-  fetch("/version.json").then((r) => r.ok && r.json()).then((v) => {
-    if (v && v.version) document.querySelectorAll("[data-v]").forEach((el) => { el.textContent = v.version; });
-  }).catch(() => {});
-  // A copy button on every command block.
-  document.querySelectorAll("pre").forEach((pre) => {
-    const b = document.createElement("button");
-    b.type = "button"; b.className = "copy"; b.textContent = "Sao chép";
-    b.addEventListener("click", () => {
-      navigator.clipboard.writeText(pre.querySelector("code").innerText.trim()).then(() => {
-        b.textContent = "Đã chép"; setTimeout(() => { b.textContent = "Sao chép"; }, 1500);
-      });
-    });
-    pre.appendChild(b);
-  });
-</script>
+<script src="/guide.js"></script>
 </body>
 </html>

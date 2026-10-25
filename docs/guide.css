@@ -19,7 +19,8 @@
 .toc ol { margin: 0; }
 .toc a { color: var(--ink); }
 
-.guide pre { position: relative; padding-right: 92px; line-height: 1.6; }
+.pre-box { position: relative; margin: 1em 0; }
+.guide pre { margin: 0; padding-right: 92px; line-height: 1.6; }
 .copy {
   position: absolute; top: 8px; right: 8px; font: 600 12px var(--dk-fontFamily-brand);
   color: var(--dk-color-ink-50); background: var(--dk-color-ink-600); border: 1px solid rgb(255 255 255 / 0.18); /* solid: long commands scroll underneath */
@@ -34,3 +35,10 @@
 .examples tr:last-child td { border-bottom: 0; }
 
 .guide details summary span { flex: 1; }
+
+.guide-list { list-style: none; padding: 0 !important; margin: 0; display: grid; gap: 14px; }
+.guide-list li { margin: 0; }
+.guide-list a { display: grid; gap: 4px; padding: 18px 20px; background: var(--raised); border: 1px solid var(--line); border-radius: 14px; color: var(--muted); text-decoration: none; }
+.guide-list a:hover { border-color: var(--accent); }
+.guide-list strong { color: var(--heading); font-size: 19px; }
+.guide-list .where { margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.03em; color: var(--accent-text); text-transform: uppercase; }
