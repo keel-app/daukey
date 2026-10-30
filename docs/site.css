@@ -14,6 +14,10 @@
   color-scheme: light dark;
 }
 
+/* Light page: a cool navy-tinted grey from the app's ink scale, not a warm cream. Dark mode keeps the tokens. */
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --page: var(--dk-color-ink-50); } }
+:root[data-theme="light"] { --page: var(--dk-color-ink-50); }
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
@@ -38,11 +42,11 @@ kbd {
   display: inline-block; padding: 0.05em 0.45em; border-radius: 6px;
   border: 1px solid var(--line); border-bottom-width: 2px; background: var(--raised);
 }
-pre { background: var(--dk-color-ink-800); color: var(--dk-color-ink-50); padding: 14px 16px; border-radius: 10px; overflow-x: auto; }
+pre { background: var(--dk-color-ink-800); color: var(--dk-color-ink-50); border: 1px solid var(--dk-color-ink-600); padding: 14px 16px; border-radius: 10px; overflow-x: auto; } /* the edge keeps the block visible on the dark page */
 pre code { background: none; border: 0; padding: 0; color: inherit; }
 
 .wrap { width: min(1080px, 100% - 32px); margin-inline: auto; }
-.narrow { width: min(760px, 100% - 32px); }
+.narrow { width: min(720px, 100% - 32px); }
 
 /* ------------------------------------------------------------- header */
 
@@ -62,10 +66,10 @@ nav a:hover { color: var(--ink); background: var(--alt); }
 /* --------------------------------------------------------------- hero */
 
 .hero { padding: 72px 0 64px; }
-.hero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 48px; align-items: center; }
-.eyebrow { margin: 0 0 12px; color: var(--accent-text); font-weight: 600; font-size: 14px; letter-spacing: 0.02em; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: center; }
+.eyebrow { margin: 0 0 12px; color: var(--muted); font-weight: 600; font-size: 14px; letter-spacing: 0.02em; }
 h1 { margin: 0; color: var(--heading); font-size: clamp(34px, 5vw, 54px); line-height: 1.12; letter-spacing: -0.02em; font-weight: 700; }
-h1 .accent { color: var(--accent); }
+h1 .accent { color: inherit; } /* no colour on a single phrase */
 .lead { font-size: 19px; color: var(--muted); max-width: 34em; margin: 20px 0 28px; }
 .cta { display: flex; flex-wrap: wrap; gap: 12px; }
 .version-line { margin: 14px 0 0; color: var(--muted); font-size: 14px; }
@@ -83,21 +87,33 @@ h1 .accent { color: var(--accent); }
 .button[aria-disabled="true"] { background: var(--alt); color: var(--muted); box-shadow: none; border: 1px dashed var(--line); }
 @media (prefers-reduced-motion: reduce) { .button { transition: none; } .button.primary:hover { transform: none; } }
 
-/* typing demo */
-.demo {
-  margin: 0; background: var(--raised); border: 1px solid var(--line); border-radius: 18px;
-  box-shadow: var(--shadow); overflow: hidden;
+/* hero: the output word over the keys that typed it; keycaps use the app icon's navy face and darker edge */
+.stage { margin: 0; text-align: center; }
+.stage-out {
+  margin: 0 auto 28px; min-height: 1.15em; color: var(--heading);
+  font-size: clamp(56px, 9vw, 104px); font-weight: 700; line-height: 1.15; letter-spacing: -0.03em;
+  display: grid; width: fit-content; text-align: left;
 }
-.demo-bar { display: flex; align-items: center; gap: 7px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
-.dot { width: 11px; height: 11px; border-radius: 50%; background: var(--line); }
-.demo-mode { margin-left: auto; display: grid; place-items: center; width: 30px; height: 26px; border-radius: 6px; color: var(--heading); background: var(--alt); }
-.demo-rows { list-style: none; margin: 0; padding: 10px 18px 16px; }
-.demo-rows li { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px dashed var(--line); flex-wrap: wrap; }
-.demo-rows li:last-child { border-bottom: 0; }
-.keys { font-size: 15px; color: var(--muted); }
-.arrow { color: var(--muted); }
-.out { font-size: 22px; font-weight: 600; color: var(--heading); }
-.tag { margin-left: auto; font-size: 12px; font-weight: 600; color: var(--accent-text); background: color-mix(in srgb, var(--accent) 12%, transparent); padding: 2px 8px; border-radius: 99px; }
+/* an invisible copy of the finished word holds the width, so the word does not shift while it is typed */
+.stage-out::before { content: "Việt Nam"; grid-area: 1 / 1; visibility: hidden; }
+.stage-text { grid-area: 1 / 1; }
+.stage.typing .stage-text::after { content: ""; display: inline-block; width: 0.06em; height: 0.8em; margin-left: 0.06em; vertical-align: -0.06em; background: var(--accent); }
+.stage-keys { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 6px; }
+.stage-keys kbd {
+  display: grid; place-items: center; min-width: 36px; height: 40px; padding: 0 8px; border: 0; border-radius: 8px;
+  background: var(--dk-icon-keycap-face); color: var(--dk-icon-glyph); font: 600 16px var(--dk-fontFamily-brand);
+  box-shadow: 0 4px 0 var(--dk-icon-keycap-edge); transition: transform 70ms ease, box-shadow 70ms ease, background-color 70ms ease;
+}
+.stage-keys kbd.space { min-width: 92px; font-size: 13px; font-weight: 500; }
+.stage-keys kbd.down { transform: translateY(4px); box-shadow: 0 0 0 var(--dk-icon-keycap-edge); background: var(--dk-color-ember-500); }
+.stage figcaption { margin-top: 28px; color: var(--muted); font-size: 14px; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .stage-keys kbd { background: var(--dk-color-ink-600); box-shadow: 0 4px 0 var(--dk-color-ink-950); }
+  :root:not([data-theme="light"]) .stage-keys kbd.down { background: var(--dk-color-ember-500); box-shadow: 0 0 0 var(--dk-color-ink-950); }
+}
+:root[data-theme="dark"] .stage-keys kbd { background: var(--dk-color-ink-600); box-shadow: 0 4px 0 var(--dk-color-ink-950); }
+:root[data-theme="dark"] .stage-keys kbd.down { background: var(--dk-color-ember-500); box-shadow: 0 0 0 var(--dk-color-ink-950); }
+@media (prefers-reduced-motion: reduce) { .stage-keys kbd { transition: none; } }
 
 /* ----------------------------------------------------------- sections */
 
@@ -117,6 +133,12 @@ h2 + .cards, h2 + .guides { margin-top: 28px; }
 .card p { margin: 0; color: var(--muted); }
 .card .meta { margin-bottom: 18px; font-size: 14px; }
 .card .hint { margin-top: 14px; font-size: 14px; }
+/* the features are a list, not nine boxes: open columns under a rule, the first one set larger as the lead */
+.features { gap: 36px 32px; }
+.features .card { background: none; border: 0; border-top: 1px solid var(--line); border-radius: 0; padding: 18px 0 0; }
+.features .card:first-child { grid-column: 1 / -1; border-top-color: var(--accent); padding-top: 24px; }
+.features .card:first-child h3 { font-size: clamp(26px, 3.4vw, 36px); line-height: 1.2; max-width: 22em; margin-bottom: 12px; }
+.features .card:first-child p:not(.where) { font-size: 19px; max-width: 40em; }
 .downloads .card { display: flex; flex-direction: column; align-items: flex-start; }
 .downloads .card.recommended { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), var(--shadow); }
 .downloads .card.recommended h3::after {
@@ -124,7 +146,7 @@ h2 + .cards, h2 + .guides { margin-top: 28px; }
   font-size: 12px; font-weight: 600; color: var(--accent-text);
   background: color-mix(in srgb, var(--accent) 12%, transparent); padding: 2px 8px; border-radius: 99px;
 }
-.where { margin: 0 0 6px !important; font-size: 12px; font-weight: 600; letter-spacing: 0.03em; color: var(--accent-text) !important; text-transform: uppercase; }
+.where { margin: 0 0 6px !important; font-size: 14px; font-weight: 600; color: var(--muted) !important; }
 .bad { color: var(--dk-color-error); text-decoration: line-through; text-decoration-thickness: 1.5px; }
 .basics-title { margin: 44px 0 14px; font-size: 20px; color: var(--heading); }
 .basics { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px 24px; color: var(--muted); }
@@ -158,11 +180,17 @@ details li { margin-bottom: 8px; }
 
 /* ------------------------------------------------------------- narrow */
 
+@media (max-width: 480px) {
+  .top-row { gap: 8px; }
+  nav { gap: 0; }
+  nav a { padding: 6px 7px; font-size: 14px; }
+  .brand { font-size: 17px; gap: 8px; }
+}
+
 @media (max-width: 860px) {
   .hero { padding: 40px 0; }
   .hero-grid, .downloads, .features { grid-template-columns: minmax(0, 1fr); }
   .cta .button { flex: 1 1 auto; }
   .hero-grid { gap: 32px; }
-  nav a:not(:first-child) { display: none; }
   .section { padding: 52px 0; }
 }

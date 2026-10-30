@@ -60,3 +60,23 @@
     .then(apply)
     .catch(() => { /* keep the static links to the releases page */ });
 })();
+
+// Hero: type "Vieetj Nam" once, key by key, then stop on the finished word.
+// Without this script (or with reduced motion) the page already shows the result.
+(function () {
+  const stage = document.querySelector(".stage");
+  if (!stage || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const text = stage.querySelector(".stage-text");
+  const keys = stage.querySelectorAll("kbd");
+  const steps = ["V", "Vi", "Vie", "Viê", "Viêt", "Việt", "Việt ", "Việt N", "Việt Na", "Việt Nam"];
+  text.textContent = "";
+  stage.classList.add("typing");
+  keys.forEach((key, i) => {
+    setTimeout(() => {
+      text.textContent = steps[i];
+      key.classList.add("down");
+      setTimeout(() => key.classList.remove("down"), 140);
+      if (i === keys.length - 1) setTimeout(() => stage.classList.remove("typing"), 600);
+    }, 700 + i * 220);
+  });
+})();

@@ -41,4 +41,4 @@
 .guide-list a { display: grid; gap: 4px; padding: 18px 20px; background: var(--raised); border: 1px solid var(--line); border-radius: 14px; color: var(--muted); text-decoration: none; }
 .guide-list a:hover { border-color: var(--accent); }
 .guide-list strong { color: var(--heading); font-size: 19px; }
-.guide-list .where { margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.03em; color: var(--accent-text); text-transform: uppercase; }
+.guide-list .where { margin: 0; font-size: 14px; font-weight: 600; color: var(--muted); }

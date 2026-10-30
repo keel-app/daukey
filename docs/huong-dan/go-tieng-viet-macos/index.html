@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cách gõ tiếng Việt trên macOS (Telex, VNI) – DauKey</title>
+<meta name="description" content="Hướng dẫn cài bộ gõ tiếng Việt DauKey trên macOS 12 trở lên: tải, kéo vào Applications, cấp quyền bàn phím, chuyển Việt/Anh bằng Ctrl+Shift. Chạy trên Mac Apple Silicon và Intel.">
+<link rel="canonical" href="https://daukey.keellabs.dev/huong-dan/go-tieng-viet-macos/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DauKey">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:url" content="https://daukey.keellabs.dev/huong-dan/go-tieng-viet-macos/">
+<meta property="og:title" content="Cách gõ tiếng Việt trên macOS">
+<meta property="og:description" content="Cài DauKey, cấp quyền bàn phím và gõ Telex, VNI trên Mac. Vài phút là xong.">
+<meta property="og:image" content="https://daukey.keellabs.dev/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f1f2f7">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Cách gõ tiếng Việt trên macOS","inLanguage":"vi","datePublished":"2026-10-30","dateModified":"2026-10-30","url":"https://daukey.keellabs.dev/huong-dan/go-tieng-viet-macos/","image":"https://daukey.keellabs.dev/img/og.png","author":{"@type":"Organization","name":"Keel Labs","url":"https://keellabs.dev/"},"publisher":{"@type":"Organization","name":"Keel Labs","url":"https://keellabs.dev/"},"about":{"@type":"SoftwareApplication","name":"DauKey","applicationCategory":"UtilitiesApplication","operatingSystem":"macOS"}}</script>
+<link rel="icon" href="/img/daukey.svg" type="image/svg+xml">
+<link rel="icon" href="/img/favicon-64.png" type="image/png" sizes="64x64">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/design-tokens.css">
+<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/guide.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-row">
+    <a class="brand" href="/"><img src="/img/daukey.svg" alt="" width="32" height="32"><span>DauKey</span></a>
+    <nav aria-label="Điều hướng chính">
+      <a href="/#tai-ve">Tải về</a>
+      <a href="/huong-dan/">Hướng dẫn</a>
+      <a href="/#hoi-dap">Hỏi đáp</a>
+    </nav>
+  </div>
+</header>
+
+<main class="guide narrow">
+  <p class="crumbs"><a href="/">DauKey</a> › <a href="/huong-dan/">Hướng dẫn</a></p>
+  <h1>Cách gõ tiếng Việt trên macOS</h1>
+  <p class="lead">Cài <strong>DauKey</strong>, bộ gõ tiếng Việt miễn phí, để gõ Telex, VNI hoặc VIQR trên Mac.
+    Kéo vào Applications, cấp quyền bàn phím một lần, xong trong vài phút.</p>
+
+  <aside class="box">
+    <strong>Cần có</strong>
+    <ul>
+      <li>macOS 12 trở lên, Mac chip Apple Silicon hoặc Intel đều chạy được.</li>
+      <li>Nếu đang dùng bộ gõ tiếng Việt khác (kể cả Telex có sẵn của macOS trong Input Sources), hãy tắt nó trước để không bị gõ dấu hai lần.</li>
+    </ul>
+  </aside>
+
+  <nav class="toc" aria-label="Các bước">
+    <ol>
+      <li><a href="#tai">Tải và cài DauKey</a></li>
+      <li><a href="#quyen">Cấp quyền bàn phím</a></li>
+      <li><a href="#go">Gõ thử và chuyển Việt/Anh</a></li>
+      <li><a href="#cai-dat">Chọn kiểu gõ và các tuỳ chọn</a></li>
+      <li><a href="#loi">Khi không gõ được</a></li>
+      <li><a href="#go-cai">Gỡ cài đặt</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="tai">1. Tải và cài DauKey</h2>
+  <ol>
+    <li>Tải <strong>bản macOS</strong> ở <a href="/#tai-ve">trang tải về</a>
+      (file <code>DauKey-<span data-v>1.0.0</span>-macOS.zip</code>).</li>
+    <li>Giải nén file <code>.zip</code>, rồi kéo <strong>DauKey</strong> vào thư mục <strong>Applications</strong>.</li>
+    <li>Lần đầu mở: chuột phải vào DauKey → <strong>Open</strong> → <strong>Open</strong>.
+      Bước này chỉ cần làm một lần.</li>
+  </ol>
+
+  <h2 id="quyen">2. Cấp quyền bàn phím</h2>
+  <p>DauKey cần quyền này để đọc phím bạn gõ và thay bằng chữ có dấu. DauKey không gửi gì ra khỏi máy.</p>
+  <ol>
+    <li>Mở <strong>System Settings</strong> → <strong>Privacy &amp; Security</strong>.</li>
+    <li>Chọn <strong>Device Control and Data Access</strong>. Trên macOS 26 trở về trước, mục này tên
+      <strong>Accessibility</strong>.</li>
+    <li>Bật công tắc cạnh <strong>DauKey</strong>. Nếu DauKey chưa có trong danh sách, bấm <strong>+</strong> và chọn DauKey trong Applications.</li>
+  </ol>
+  <p>Khi có quyền, chữ <strong>â</strong> hiện trên thanh menu, góc trên bên phải màn hình: DauKey đã sẵn sàng.</p>
+
+  <h2 id="go">3. Gõ thử và chuyển Việt/Anh</h2>
+  <p>Mở TextEdit hoặc Notes và gõ thử:</p>
+  <table class="examples">
+    <thead><tr><th>Gõ (Telex)</th><th>Ra</th></tr></thead>
+    <tbody>
+      <tr><td><code>Vieetj Nam</code></td><td>Việt Nam</td></tr>
+      <tr><td><code>ddi ddaau</code></td><td>đi đâu</td></tr>
+      <tr><td><code>nuwowcs</code></td><td>nước</td></tr>
+      <tr><td><code>github</code></td><td>github (từ tiếng Anh giữ nguyên)</td></tr>
+    </tbody>
+  </table>
+  <p>Bấm <kbd>Ctrl</kbd>+<kbd>Shift</kbd> rồi nhả để chuyển qua lại tiếng Việt và tiếng Anh. Chữ trên thanh menu đổi giữa
+    <strong>â</strong> và <strong>a</strong>, kèm một tiếng báo nhỏ. Các phím của ứng dụng như
+    <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> vẫn chạy như thường. Bấm chữ trên thanh menu và chọn
+    <strong>Bật tiếng Việt</strong> hoặc <strong>Tắt tiếng Việt</strong> cũng được.</p>
+  <p class="hint">Trên thanh địa chỉ của Chrome, Safari, Edge, Firefox hay Cốc Cốc, DauKey tự tránh lỗi trình duyệt gợi ý
+    làm hỏng chữ, nên gõ <code>nguyeenx</code> vẫn ra <strong>nguyễn</strong>.</p>
+
+  <h2 id="cai-dat">4. Chọn kiểu gõ và các tuỳ chọn</h2>
+  <p>Bấm chữ <strong>â</strong> trên thanh menu để chọn nhanh <strong>kiểu gõ</strong> (Telex, Telex đơn giản, VNI, VIQR),
+    <strong>bảng mã</strong>, bật/tắt <strong>gõ tắt</strong> và <strong>kiểm tra chính tả</strong>.
+    Chọn <strong>Cài đặt…</strong> (hoặc bấm <kbd>⌘</kbd><kbd>,</kbd>) để mở cửa sổ Cài đặt:</p>
+  <ul>
+    <li><strong>Chung</strong>: tự chạy khi đăng nhập, tự kiểm tra bản mới mỗi ngày.</li>
+    <li><strong>Kiểu gõ</strong>: kiểu gõ, bảng mã, phím chuyển Việt/Anh, âm thanh báo.</li>
+    <li><strong>Tùy chọn</strong>: bỏ dấu kiểu mới (hoà, khoẻ), viết hoa đầu câu, tạm gõ tiếng Anh khi bật Caps Lock.</li>
+    <li><strong>Gõ tắt</strong>: thêm <code>vn</code> → Việt Nam. Xem <a href="/huong-dan/go-tat/">cách dùng gõ tắt</a>.</li>
+  </ul>
+
+  <h2 id="loi">5. Khi không gõ được</h2>
+  <details>
+    <summary><span>Chữ â không hiện, hoặc gõ không ra dấu</span></summary>
+    <p>Kiểm tra DauKey đã được bật trong <strong>Privacy &amp; Security</strong> như ở <a href="#quyen">bước 2</a>.
+      Vừa bật xong mà vẫn chưa gõ được thì chọn <strong>Thoát DauKey</strong> ở thanh menu rồi mở lại.</p>
+  </details>
+  <details>
+    <summary><span>Gõ ra dấu hai lần, ví dụ "Việệt"</span></summary>
+    <p>Đang có hai bộ gõ tiếng Việt chạy cùng lúc. Vào <strong>System Settings</strong> → <strong>Keyboard</strong> →
+      <strong>Input Sources</strong>, bỏ bộ gõ Vietnamese có sẵn của macOS, và thoát các bộ gõ khác như EVKey hay OpenKey.</p>
+  </details>
+  <details>
+    <summary><span>Gõ trong máy ảo hoặc remote desktop</span></summary>
+    <p>DauKey tự đứng ngoài khi cửa sổ máy ảo (VMware, Parallels, UTM…) hoặc remote desktop đang được chọn,
+      để phím đi thẳng vào máy kia. Hãy cài DauKey bên trong máy ảo hoặc máy từ xa.</p>
+  </details>
+  <details>
+    <summary><span>Mở DauKey nhưng không thấy cửa sổ nào</span></summary>
+    <p>DauKey là ứng dụng ở thanh menu, không hiện trên Dock. Tìm chữ <strong>â</strong> hoặc <strong>a</strong> ở góc trên bên phải,
+      rồi chọn <strong>Cài đặt…</strong>.</p>
+  </details>
+
+  <h2 id="go-cai">6. Gỡ cài đặt</h2>
+  <p>Chọn <strong>Thoát DauKey</strong> ở thanh menu, rồi kéo <strong>DauKey</strong> từ Applications vào Thùng rác.
+    Nếu đã bật tự chạy khi đăng nhập, bỏ chọn trước trong <strong>Cài đặt…</strong> → <strong>Chung</strong>.
+    Danh sách gõ tắt nằm ở <code>~/Library/Application Support/DauKey/macros.txt</code>; xoá thư mục <code>DauKey</code> ở đó
+    nếu muốn bỏ luôn.</p>
+
+  <aside class="box next">
+    <strong>Dùng cả Windows hay Ubuntu?</strong>
+    <p>DauKey gõ y hệt nhau trên mọi hệ điều hành, cùng phím tắt và cùng file gõ tắt.
+      Xem <a href="/huong-dan/go-tieng-viet-windows/">cách gõ tiếng Việt trên Windows</a> hoặc
+      <a href="/huong-dan/go-tieng-viet-ubuntu/">trên Ubuntu</a>.</p>
+  </aside>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-row">
+    <span>© 2026 <a href="https://keellabs.dev">Keel Labs</a></span>
+    <span><a href="/">DauKey</a> · <a href="/huong-dan/">Hướng dẫn</a> · <a href="https://github.com/keel-app/daukey/releases">Các bản phát hành</a></span>
+  </div>
+</footer>
+
+<script src="/guide.js"></script>
+</body>
+</html>

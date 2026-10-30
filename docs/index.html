@@ -16,7 +16,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#f6f5f1">
+<meta name="theme-color" content="#f1f2f7">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DauKey", "url": "https://daukey.keellabs.dev/", "description": "Bộ gõ tiếng Việt Telex, VNI, VIQR gõ y hệt nhau trên Windows, Linux và macOS.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Windows 10, Windows 11, Linux, macOS", "inLanguage": "vi", "image": "https://daukey.keellabs.dev/img/og.png", "downloadUrl": "https://daukey.keellabs.dev/#tai-ve", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "VND"}, "publisher": {"@type": "Organization", "name": "Keel Labs", "url": "https://keellabs.dev/"}}</script>
 <link rel="icon" href="img/daukey.svg" type="image/svg+xml">
 <link rel="icon" href="img/favicon-64.png" type="image/png" sizes="64x64">
@@ -34,7 +34,7 @@
       <img src="img/daukey.svg" alt="" width="32" height="32">
       <span>DauKey</span>
     </a>
-    <nav aria-label="Mục lục">
+    <nav aria-label="Điều hướng chính">
       <a href="#tai-ve">Tải về</a>
       <a href="#khac-biet">Khác biệt</a>
       <a href="#cai-dat">Cài đặt</a>
@@ -59,18 +59,10 @@
         <p class="version-line" id="version-line">Phiên bản <span data-version>1.0.0</span></p>
       </div>
 
-      <figure class="demo" aria-label="Ví dụ: gõ Vieetj Nam ra Việt Nam">
-        <div class="demo-bar">
-          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-          <span class="demo-mode" title="Đang gõ tiếng Việt"><img src="img/mode-vi.svg" alt="â" width="18" height="18"></span>
-        </div>
-        <ol class="demo-rows">
-          <li><kbd class="keys">Vieetj Nam</kbd><span class="arrow" aria-hidden="true">→</span><span class="out">Việt Nam</span></li>
-          <li><kbd class="keys">tieengs Vieetj</kbd><span class="arrow" aria-hidden="true">→</span><span class="out">tiếng Việt</span></li>
-          <li><kbd class="keys">nuwowcs</kbd><span class="arrow" aria-hidden="true">→</span><span class="out">nước</span></li>
-          <li><kbd class="keys">github</kbd><span class="arrow" aria-hidden="true">→</span><span class="out">github</span><span class="tag">giữ nguyên</span></li>
-          <li><kbd class="keys">vn␣</kbd><span class="arrow" aria-hidden="true">→</span><span class="out">Việt Nam</span><span class="tag">gõ tắt</span></li>
-        </ol>
+<figure class="stage" role="img" aria-label="Ví dụ: gõ Vieetj Nam ra Việt Nam">
+        <p class="stage-out" aria-hidden="true"><span class="stage-text">Việt Nam</span></p>
+        <ol class="stage-keys" aria-hidden="true"><li><kbd>V</kbd></li><li><kbd>i</kbd></li><li><kbd>e</kbd></li><li><kbd>e</kbd></li><li><kbd>t</kbd></li><li><kbd>j</kbd></li><li><kbd class="space">cách</kbd></li><li><kbd>N</kbd></li><li><kbd>a</kbd></li><li><kbd>m</kbd></li></ol>
+        <figcaption>Gõ Telex: <code>Vieetj Nam</code>. Từ tiếng Anh như <code>github</code> được giữ nguyên.</figcaption>
       </figure>
     </div>
   </section>
@@ -188,6 +180,7 @@
             <li>Cấp quyền: System Settings → Privacy &amp; Security → <strong>Device Control and Data Access</strong> (macOS 26 trở về trước: <strong>Accessibility</strong>) → bật DauKey.</li>
             <li>Chữ <strong>â</strong> hiện trên thanh menu là đã sẵn sàng. Cài đặt ở menu → Cài đặt… (<kbd>⌘</kbd><kbd>,</kbd>).</li>
           </ol>
+          <p class="hint">Hướng dẫn từng bước: <a href="/huong-dan/go-tieng-viet-macos/">Cách gõ tiếng Việt trên macOS</a>.</p>
         </details>
         <details data-os="windows">
           <summary>Windows</summary>
