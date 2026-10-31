@@ -1,11 +1,11 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "released": true,
-  "page": "https://github.com/keel-app/daukey/releases/tag/v1.0.1",
+  "page": "https://github.com/keel-app/daukey/releases/tag/v1.0.2",
   "downloads": {
-    "windows": "https://github.com/keel-app/daukey/releases/download/v1.0.1/DauKey-1.0.1-Windows-Setup.exe",
-    "windows-zip": "https://github.com/keel-app/daukey/releases/download/v1.0.1/DauKey-1.0.1-Windows.zip",
-    "linux": "https://github.com/keel-app/daukey/releases/download/v1.0.1/DauKey-1.0.1-Linux-IBus.tar.gz",
-    "linux-arm64": "https://github.com/keel-app/daukey/releases/download/v1.0.1/DauKey-1.0.1-Linux-IBus-arm64.tar.gz"
+    "windows": "https://github.com/keel-app/daukey/releases/download/v1.0.2/DauKey-1.0.2-Windows-Setup.exe",
+    "windows-zip": "https://github.com/keel-app/daukey/releases/download/v1.0.2/DauKey-1.0.2-Windows.zip",
+    "linux": "https://github.com/keel-app/daukey/releases/download/v1.0.2/DauKey-1.0.2-Linux-IBus.tar.gz",
+    "linux-arm64": "https://github.com/keel-app/daukey/releases/download/v1.0.2/DauKey-1.0.2-Linux-IBus-arm64.tar.gz"
   }
 }
