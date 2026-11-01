@@ -1,7 +1,6 @@
-/* Guide pages (huong-dan/...): one reading column on top of home.css. Left-aligned with the header, text capped near 70 characters. */
+/* Guide pages (huong-dan/...): one centred reading column on top of home.css, about 70 characters wide. Text inside stays left-aligned. */
 
-.guide { width: min(1100px, 100% - 32px); margin-inline: auto; padding: 48px 0 96px; }
-.guide > * { max-width: 760px; }
+.guide { width: min(760px, 100% - 32px); margin-inline: auto; padding: 48px 0 96px; }
 .crumbs { margin: 0 0 20px; font-size: 15px; color: var(--muted); }
 .crumbs a { color: var(--muted); }
 .guide h1 { font-size: clamp(34px, 5vw, 56px); line-height: 1.08; letter-spacing: -0.03em; font-weight: 800; text-wrap: balance; }
@@ -37,7 +36,6 @@
 .examples th { font-size: 15px; color: var(--muted); font-weight: 600; border-bottom-color: var(--ink); }
 
 .guide details summary span { flex: 1; }
-.guide details > :not(summary) { max-width: none; }
 
 .guide-list { list-style: none; padding: 0 !important; margin: 0; border-top: 1px solid var(--line); }
 .guide-list li { margin: 0; border-bottom: 1px solid var(--line); }
