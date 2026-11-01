@@ -1,44 +1,49 @@
-/* Guide pages (huong-dan/...): an article column on top of site.css. */
+/* Guide pages (huong-dan/...): one reading column on top of home.css. Left-aligned with the header, text capped near 70 characters. */
 
-.guide { padding: 40px 0 64px; margin-inline: auto; }
-.crumbs { margin: 0 0 14px; font-size: 14px; color: var(--muted); }
+.guide { width: min(1100px, 100% - 32px); margin-inline: auto; padding: 48px 0 96px; }
+.guide > * { max-width: 760px; }
+.crumbs { margin: 0 0 20px; font-size: 15px; color: var(--muted); }
 .crumbs a { color: var(--muted); }
-.guide h1 { margin: 0; color: var(--heading); font-size: clamp(32px, 4.6vw, 46px); line-height: 1.12; letter-spacing: -0.02em; }
-.guide .lead { margin: 18px 0 26px; font-size: 19px; color: var(--muted); }
-.guide h2 { margin: 48px 0 12px; font-size: 26px; scroll-margin-top: 80px; }
-.guide p, .guide li { line-height: 1.7; }
-.guide ol, .guide ul { padding-left: 22px; }
-.guide li { margin-bottom: 6px; }
+.guide h1 { font-size: clamp(34px, 5vw, 56px); line-height: 1.08; letter-spacing: -0.03em; font-weight: 800; text-wrap: balance; }
+.guide .lead { margin: 22px 0 32px; font-size: 20px; color: var(--muted); }
+.guide h2 { margin: 64px 0 14px; padding-top: 24px; border-top: 1px solid var(--line); font-size: clamp(24px, 3vw, 32px); line-height: 1.2; letter-spacing: -0.025em; scroll-margin-top: 88px; }
+.guide p, .guide li { line-height: 1.75; }
+.guide ol, .guide ul { padding-left: 24px; }
+.guide li { margin-bottom: 8px; }
+.guide li::marker { color: var(--accent-text); font-weight: 700; }
 
-.box { background: var(--raised); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 12px; padding: 14px 18px; margin: 0 0 22px; }
+/* a note: a bar in the accent colour, no box */
+.box { margin: 0 0 28px; padding: 2px 0 2px 20px; border-left: 3px solid var(--accent); }
 .box ul { margin: 6px 0 0; }
 .box p { margin: 6px 0 0; }
-.box.next { margin-top: 48px; }
+.box.next { margin-top: 56px; }
 
-.toc { background: var(--alt); border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; }
+.toc { margin: 0 0 8px; padding: 18px 0; border-block: 1px solid var(--line); }
 .toc ol { margin: 0; }
 .toc a { color: var(--ink); }
 
-.pre-box { position: relative; margin: 1em 0; }
-.guide pre { margin: 0; padding-right: 92px; line-height: 1.6; }
+.pre-box { position: relative; margin: 1.2em 0; }
+.guide pre { margin: 0; padding-right: 96px; line-height: 1.6; }
 .copy {
-  position: absolute; top: 8px; right: 8px; font: 600 12px var(--dk-fontFamily-brand);
+  position: absolute; top: 8px; right: 8px; font: 600 13px var(--dk-fontFamily-brand);
   color: var(--dk-color-ink-50); background: var(--dk-color-ink-600); border: 1px solid rgb(255 255 255 / 0.18); /* solid: long commands scroll underneath */
-  border-radius: 7px; padding: 5px 10px; cursor: pointer;
+  border-radius: 7px; padding: 5px 11px; cursor: pointer;
 }
 .copy:hover { background: var(--dk-color-ink-500); }
-.tab-label { margin: 16px 0 6px; font-weight: 600; font-size: 15px; color: var(--heading); }
+.tab-label { margin: 20px 0 6px; font-weight: 700; font-size: 16px; }
 
-.examples { width: 100%; border-collapse: collapse; margin: 14px 0; background: var(--raised); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
-.examples th, .examples td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); }
-.examples th { font-size: 14px; color: var(--muted); font-weight: 600; background: var(--alt); }
-.examples tr:last-child td { border-bottom: 0; }
+.examples { width: 100%; border-collapse: collapse; margin: 18px 0; }
+.examples th, .examples td { text-align: left; padding: 12px 16px 12px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+.examples th { font-size: 15px; color: var(--muted); font-weight: 600; border-bottom-color: var(--ink); }
 
 .guide details summary span { flex: 1; }
+.guide details > :not(summary) { max-width: none; }
 
-.guide-list { list-style: none; padding: 0 !important; margin: 0; display: grid; gap: 14px; }
-.guide-list li { margin: 0; }
-.guide-list a { display: grid; gap: 4px; padding: 18px 20px; background: var(--raised); border: 1px solid var(--line); border-radius: 14px; color: var(--muted); text-decoration: none; }
-.guide-list a:hover { border-color: var(--accent); }
-.guide-list strong { color: var(--heading); font-size: 19px; }
-.guide-list .where { margin: 0; font-size: 14px; font-weight: 600; color: var(--muted); }
+.guide-list { list-style: none; padding: 0 !important; margin: 0; border-top: 1px solid var(--line); }
+.guide-list li { margin: 0; border-bottom: 1px solid var(--line); }
+.guide-list a { display: grid; gap: 4px; padding: 22px 0; color: var(--muted); text-decoration: none; }
+.guide-list a:hover strong { color: var(--accent-text); }
+.guide-list strong { color: var(--ink); font-size: 22px; letter-spacing: -0.02em; }
+.guide-list .where { margin: 0; }
+
+.toc + h2 { margin-top: 40px; padding-top: 0; border-top: 0; }
